@@ -1,5 +1,5 @@
-import Logo from "@/components/Logo"
-import Button from "@/components/Button"
+import Logo from "@/src/components/Logo"
+import Button from "@/src/components/Button"
 
 export default function NavigationBar() {
   return (

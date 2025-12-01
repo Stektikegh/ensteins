@@ -1,5 +1,5 @@
-import Logo from "@/components/Logo"
-import NavigationBar from "@/components/NavigationBar";
+import Logo from "@/src/components/Logo"
+import NavigationBar from "@/src/components/NavigationBar";
 
 
 
