@@ -79,7 +79,7 @@ function FloatingPaths({
               repeatType: "reverse",
               ease: "easeInOut",
             }}
-            style={{  }}
+            style={{}}
           />
         ))}
       </svg>
@@ -88,7 +88,7 @@ function FloatingPaths({
 }
 
 export default function BackgroundPaths() {
-  useEffect(()=> console.log('render'))
+  useEffect(() => console.log('render'))
   return (
     <div className="absolute inset-0">
       <FloatingPaths position={1} count={40} />
