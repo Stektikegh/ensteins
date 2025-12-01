@@ -1,4 +1,4 @@
-import BackgroundPaths from "./components/BackgroundPaths";
+import BackgroundPaths from "@/src/components/BackgroundPaths";
 
 
 export default function Home() {
