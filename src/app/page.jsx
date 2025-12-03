@@ -8,13 +8,13 @@ import Carousel from "@/src/components/Carousel";
 
 export default function Home() {
   return (
-    <main className="h-[100vh] w-[100vw] bg-black z-0">
+    <main className="w-[100vw] bg-black z-0">
 
       <BackgroundPaths />
       <div className="fixed w-full bg-black z-100">
         <NavigationBar />
       </div>
-      <div className="flex justify-center items-center w-full h-full">
+      <div className="flex justify-center items-center w-full h-[100vh]">
         <div className="w-[20vw] relative">
           <Logo />
         </div>
