@@ -38,7 +38,6 @@ function FloatingPaths({
   widthStep = 0.06,
   speed = [5, 15],
 }) {
-
   const paths = useMemo(() => {
     return Array.from({ length: count }, (_, i) => {
       return {
@@ -79,7 +78,7 @@ function FloatingPaths({
               repeatType: "reverse",
               ease: "easeInOut",
             }}
-            style={{  }}
+            style={{}}
           />
         ))}
       </svg>
@@ -88,9 +87,15 @@ function FloatingPaths({
 }
 
 export default function BackgroundPaths() {
-  useEffect(()=> console.log('render'))
+  useEffect(() => console.log("render"));
   return (
-    <div className="absolute inset-0">
+    <div
+      className="
+        absolute inset-0 
+        mask-[linear-gradient(to_bottom,black_80%,transparent_100%)]
+        pointer-events-none
+      "
+    >
       <FloatingPaths position={1} count={40} />
       {/* <FloatingPaths position={-2} count={40} /> */}
       <FloatingPaths position={-2} count={20} widthStart={1} />

@@ -50,8 +50,8 @@ export default function HeroSection() {
             Move
           </div>
         </h1>
-        <div className="mt-8">
-          <Button>Join Us</Button>
+        <div className="mt-12">
+          <Button><span className='m-10 mt-3.5' >Join Us</span></Button>
         </div>
       </div>
       <link
