@@ -1,16 +1,18 @@
-import "@/src/app/globals.css"
+import "@/src/app/globals.css";
+import NavigationBar from "../components/NavigationBar";
 
 export const metadata = {
   title: "Ensteins",
   description: "We Make Technology Move",
 };
 
-export default function RootLayout({
-  children,
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-[#06021A]" >
+        <div className="pb-12" >
+          <NavigationBar />
+        </div>
         {children}
       </body>
     </html>

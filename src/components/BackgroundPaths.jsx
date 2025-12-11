@@ -36,9 +36,8 @@ function FloatingPaths({
   baseColor = "10, 50, 200",
   widthStart = 1.8,
   widthStep = 0.06,
-  speed = [10, 25],
+  speed = [5, 15],
 }) {
-
   const paths = useMemo(() => {
     return Array.from({ length: count }, (_, i) => {
       return {
@@ -51,7 +50,7 @@ function FloatingPaths({
     });
   }, [position, count, baseColor, widthStart, widthStep, speed]);
 
-  const safeSpeed = Array.isArray(speed) && speed.length === 2 ? speed : [10, 25];
+  // const safeSpeed = Array.isArray(speed) && speed.length === 2 ? speed : [10, 25];
   // const dropShadowColor = baseColor.replace(/ /g, "");
 
   return (
@@ -79,7 +78,7 @@ function FloatingPaths({
               repeatType: "reverse",
               ease: "easeInOut",
             }}
-            style={{  }}
+            style={{}}
           />
         ))}
       </svg>
@@ -88,11 +87,18 @@ function FloatingPaths({
 }
 
 export default function BackgroundPaths() {
-  useEffect(()=> console.log('render'))
+  useEffect(() => console.log("render"));
   return (
-    <div className="absolute inset-0">
+    <div
+      className="
+        absolute inset-0 
+        mask-[linear-gradient(to_bottom,black_80%,transparent_100%)]
+        pointer-events-none
+      "
+    >
       <FloatingPaths position={1} count={40} />
-      {/* <FloatingPaths position={-1} count={20} widthStart={0.5} /> */}
+      {/* <FloatingPaths position={-2} count={40} /> */}
+      <FloatingPaths position={-2} count={20} widthStart={1} />
     </div>
   );
 }

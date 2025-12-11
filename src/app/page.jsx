@@ -2,14 +2,14 @@ import NavigationBar from "@/src/components/NavigationBar";
 import BackgroundPaths from "@/src/components/BackgroundPaths";
 import Carousel from "@/src/components/Carousel";
 import Footer from "@/src/components/Footer";
-import HeroSection from "@/src/components/heroSection";
+import HeroSection from "@/src/components/HeroSection";
 import EventsSection from "@/src/components/EventsSection";
-
+import DropDownLine from "@/src/components/DropDownLine";
+import Stats from "@/src/components/Stats";
 
 export default function Home() {
   return (
-    <main className="w-[100vw] bg-black z-0">
-
+    <main className="w-screen z-0">
       <BackgroundPaths />
 
       <div className="fixed w-full bg-black z-100">
@@ -20,13 +20,28 @@ export default function Home() {
         <HeroSection />
       </div>
 
+      <div className="w-full flex justify-center">
+        <Stats />
+      </div>
+
+      <div>
+        <DropDownLine />
+      </div>
+
       <div>
         <EventsSection />
       </div>
 
-      <div className="bg-black w-full h-full flex justify-center p-[100px]">
-        <Carousel slides={["https://picsum.dev/200/100", "https://picsum.dev/200/99", "https://picsum.dev/200/98"]} />
+      <div className="w-full h-full flex justify-center p-[100px]">
+        <Carousel
+          slides={[
+            "https://picsum.dev/200/100",
+            "https://picsum.dev/200/99",
+            "https://picsum.dev/200/98",
+          ]}
+        />
       </div>
+
 
       <Footer />
     </main >
