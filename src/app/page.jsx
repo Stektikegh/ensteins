@@ -6,6 +6,7 @@ import EventsSection from "@/src/components/EventsSection";
 import DropDownLine from "@/src/components/DropDownLine";
 import Stats from "@/src/components/Stats";
 import ReachUs from "../components/ReachUs";
+import MemoriesList from "../components/MemoriesList";
 
 export default function Home() {
   return (
@@ -39,6 +40,8 @@ export default function Home() {
       </div>
 
       <ReachUs />
+
+      <MemoriesList />
 
       <Footer />
     </main>
