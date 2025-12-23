@@ -1,5 +1,6 @@
 import HeroSection from "../components/heroSection";
-import MembersSection from "../components/membersSection";
+import MembersSectionGrid from "../components/membersSectionGrid";
+import MembersSectionCarousel from "../components/membersSectionCarousel";
 
 
 export default function Home() {
@@ -7,7 +8,8 @@ export default function Home() {
     <main >
       <div >
       
-        <MembersSection />
+        <MembersSectionCarousel />
+        <MembersSectionGrid />
       </div>
     </main>
   );

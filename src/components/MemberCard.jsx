@@ -6,10 +6,10 @@ export function MemberCard({ name, role, imageUrl, isActive, onHover, onLeave })
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
       className={`
-        w-full h-[337px] rounded-[20px] overflow-hidden 
+        w-full h-full rounded-[20px] overflow-hidden 
         transition-all duration-300 ease-in-out
         ${isActive 
-          ? 'scale-110 shadow-2xl brightness-110' 
+          ? 'scale-110 shadow-2xl brightness-110 z-10' 
           : 'scale-100 shadow-md hover:scale-105 hover:shadow-lg'
         }
       `}
@@ -21,7 +21,7 @@ export function MemberCard({ name, role, imageUrl, isActive, onHover, onLeave })
           loading="lazy"
           className="w-full h-full object-cover"
         />
-        <div className="absolute bottom-3 left-3 right-3 bg-white rounded-[16px] p-3 h-[70px] flex flex-col justify-center">
+       <div className="absolute bottom-3 left-3 right-3 bg-white rounded-[16px] p-[14px] h-[64px] flex flex-col justify-center">
   <h3 className="text-blue-600 font-semibold text-base text-center leading-tight">
     {name}
   </h3>
@@ -29,6 +29,7 @@ export function MemberCard({ name, role, imageUrl, isActive, onHover, onLeave })
     {role}
   </p>
 </div>
+
       </div>
     </div>
   );

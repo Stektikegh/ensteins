@@ -3,35 +3,15 @@
 import React, { useState } from 'react';
 import { MemberCard } from './MemberCard';
 
-export default function MembersSection() {
+export default function MembersSectionCarousel() {
   const [activePage, setActivePage] = useState(0);
   const [activeCard, setActiveCard] = useState(null);
-  const members = [
-    {
-      id: 1,
-      name: 'Einstein',
-      role: 'IT member',
-      imageUrl: 'https://picsum.photos/400/500?random=1'
-    },
-    {
-      id: 2,
-      name: 'Einstein',
-      role: 'IT member',
-      imageUrl: 'https://picsum.photos/400/500?random=2'
-    },
-    {
-      id: 3,
-      name: 'Einstein',
-      role: 'IT member',
-      imageUrl: 'https://picsum.photos/400/500?random=3'
-    },
-    {
-      id: 4,
-      name: 'Einstein',
-      role: 'IT member',
-      imageUrl: 'https://picsum.photos/400/500?random=4'
-    },
-  ];
+  const members = Array.from({ length: 50 }, (_, i) => ({
+    id: i + 1,
+    name: "Einstein",
+    role: "IT member",
+    imageUrl: `https://picsum.photos/400/500?random=${i + 1}`,
+  }));
 
   const handleCardClick = (index) => {
     setActivePage(index);
