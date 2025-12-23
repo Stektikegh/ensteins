@@ -1,7 +1,7 @@
 import React from "react";
 import AboutUsCard from "./AboutUsCard";
 
-const AboutUsSection = () => {
+const AboutUsInfo = () => {
   const aboutUsCards = [
     {
       id: 1,
@@ -53,4 +53,4 @@ const AboutUsSection = () => {
   );
 };
 
-export default AboutUsSection;
+export default AboutUsInfo;

@@ -1,9 +1,9 @@
-import AboutUsSection from "@/src/components/AboutUsSection"; 
+import AboutUsInfo from "@/src/components/AboutUsInfo";
 
 export default function Home() {
   return (
     <main className="w-screen z-0">
-      <AboutUsSection />
+      <AboutUsInfo />
     </main>
   );
 }
