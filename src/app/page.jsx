@@ -6,7 +6,6 @@ import EventsSection from "@/src/components/EventsSection";
 import DropDownLine from "@/src/components/DropDownLine";
 import Stats from "@/src/components/Stats";
 import ReachUs from "../components/ReachUs";
-import MemoriesList from "../components/MemoriesList";
 
 export default function Home() {
   return (
@@ -30,19 +29,11 @@ export default function Home() {
 
       <div id="memos" className="w-full h-full flex justify-center p-[100px]">
         <Carousel
-          slides={[
-            "memo1.jpg",
-            "memo2.jpg",
-            "memo3.jpg",
-            "memo4.jpg",
-          ]}
+          slides={["memo1.jpg", "memo2.jpg", "memo3.jpg", "memo4.jpg"]}
         />
       </div>
 
       <ReachUs />
-
-      <MemoriesList />
-
       <Footer />
     </main>
   );

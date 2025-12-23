@@ -1,5 +1,5 @@
-import { v2 as cloudinary } from 'cloudinary';
-import { NextResponse } from 'next/server';
+import { v2 as cloudinary } from "cloudinary";
+import { NextResponse } from "next/server";
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUD_NAME,
@@ -9,9 +9,22 @@ cloudinary.config({
 
 export async function GET() {
   try {
-    const result = await cloudinary.api.resources({ type: 'upload', max_results: 100 });
-    return NextResponse.json(result.resources);
+    const result = await cloudinary.api.resources({
+      type: "upload",
+      max_results: 100,
+    });
+
+    const images = result.resources.map((img) => ({
+      id: img.public_id,
+      url: img.secure_url,
+      display_name: img.display_name
+    }));
+
+    return NextResponse.json(images);
   } catch (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { error: error.message },
+      { status: 500 }
+    );
   }
 }

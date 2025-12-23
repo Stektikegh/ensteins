@@ -43,7 +43,7 @@ export default function ContactBox() {
       <div className="absolute -left-30 w-[70vw] h-[70vw] rounded-full bg-linear-to-r from-[#5c92ff]/40 via-transparent to-transparent opacity-40 blur-3xl" />
 
       <div className="relative w-[80vw] z-10">
-        <div className="backdrop-blur-sm bg-white/5 border border-white/20 rounded-2xl p-8 space-y-8">
+        <div className="backdrop-blur-sm bg-linear-to-b from-white/5 via-black/10 to-white/5 border border-white/20 rounded-2xl p-8 space-y-8">
           <h2
             className="text-center text-white tracking-tight"
             style={{
