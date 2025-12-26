@@ -26,7 +26,7 @@ export default function Footer() {
           </SocialIcon>
         </div>
 
-        <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-blue-600/40 to-transparent mb-10"></div>
+        <div className="w-[90%] h-px bg-linear-to-r from-transparent via-blue-600/40 to-transparent mb-10"></div>
 
         <div className="text-center leading-relaxed max-w-xl opacity-90 text-[15px]">
           <p className="font-light">ENSTEINS — Where Passion Meets Innovation.</p>

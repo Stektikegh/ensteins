@@ -83,7 +83,6 @@ export default function MembersSectionGrid() {
                     >
                       <MemberCard
                         name={member.display_name}
-                        role="IT Member"
                         imageUrl={member.url}
                         isActive={activeCard === index}
                         onHover={() => setActiveCard(index)}
