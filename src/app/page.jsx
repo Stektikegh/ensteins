@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import BackgroundPaths from "@/src/components/BackgroundPaths";
 import Carousel from "@/src/components/Carousel";
 import HeroSection from "@/src/components/HeroSection";
@@ -6,14 +5,10 @@ import EventsSection from "@/src/components/EventsSection";
 import DropDownLine from "@/src/components/DropDownLine";
 import Stats from "@/src/components/Stats";
 import ReachUs from "../components/ReachUs";
-=======
-import AboutUsInfo from "@/src/components/AboutUsInfo";
->>>>>>> AboutUsInfo
 
 export default function Home() {
   return (
     <main className="w-screen z-0">
-<<<<<<< HEAD
       <BackgroundPaths />
       <div className="flex justify-center items-center h-screen w-screen relative">
         <HeroSection />
@@ -38,9 +33,6 @@ export default function Home() {
       </div>
 
       <ReachUs />
-=======
-      <AboutUsInfo />
->>>>>>> AboutUsInfo
     </main>
   );
 }
