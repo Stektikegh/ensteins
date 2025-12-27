@@ -20,10 +20,10 @@ export default function ContactBox() {
 
     try {
       await emailjs.send(
-        process.env.EMAILJS_SERVICE_ID,
-        process.env.EMAILJS_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         form,
-        process.env.EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
       setSuccess(true);
       setForm({ name: "", email: "", message: "" });
@@ -119,7 +119,7 @@ export default function ContactBox() {
             </Button>
 
             {success === true && (
-              <p className="text-green-400 mt-2">Message sent successfully!</p>
+              <p className="text-blue-600 mt-2">Message sent successfully!</p>
             )}
             {success === false && (
               <p className="text-red-400 mt-2">Failed to send message.</p>

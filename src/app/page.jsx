@@ -7,6 +7,7 @@ import Stats from "@/src/components/Stats";
 import ReachUs from "../components/ReachUs";
 
 export default function Home() {
+
   return (
     <main className="w-screen z-0">
       <BackgroundPaths />

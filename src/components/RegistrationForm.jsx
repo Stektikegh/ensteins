@@ -152,9 +152,7 @@ export default function RegistrationForm() {
       newErrors.contribution = "Please tell us what you'll bring";
 
     setErrors(newErrors);
-    console.log("Errors:", newErrors);
     if (Object.keys(newErrors).length > 0) {
-      console.log("Validation failed:", newErrors);
       setSending(false);
       return;
     }
@@ -169,7 +167,6 @@ export default function RegistrationForm() {
       contribution: form.contribution.trim(),
     };
 
-    console.log("Registration form submitted:", payload);
     try {
       await submitRegistration(payload);
       setSuccess(true);

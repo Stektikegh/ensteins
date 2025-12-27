@@ -48,8 +48,8 @@ export default function HeroSection() {
           </div>
         </h1>
 
-        <Link href={"/contact-us"} className="mt-10 flex justify-center">
-          <Button className="px-10 py-3 text-lg sm:text-xl">Reach Us</Button>
+        <Link href={"/memories"} className="mt-10 flex justify-center">
+          <Button>Learn More</Button>
         </Link>
       </div>
 

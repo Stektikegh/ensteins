@@ -36,7 +36,7 @@ const AboutUsInfo = () => {
       <div className="absolute -left-30 w-[70vw] h-[70vw] rounded-full bg-linear-to-r from-[#5c92ff]/40 via-transparent to-transparent opacity-40 blur-3xl" />
 
       <h1 className="text-center relative z-10">
-        <span className="text-4xl sm:text-6xl text-white font-bold">
+        <span className="text-4xl sm:text-6xl text-blue-600 font-bold">
           History
         </span>
       </h1>

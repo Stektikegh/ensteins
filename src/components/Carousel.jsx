@@ -35,7 +35,7 @@ export default function Carousel({ slides }) {
   return (
     <div className="flex flex-col w-[80vw] sm:max-w-[60%] pb-20 mx-auto">
       <div className="absolute -left-50 w-[80vw] h-[80vw] rounded-full bg-linear-to-bl from-transparent via-transparent to-[#5c92ff] -z-10 opacity-40 blur-3xl" />
-      <h3 className="w-full text-center mb-10 font-bold text-5xl text-SpecialBlue">
+      <h3 className="w-full text-center mb-10 font-bold text-5xl text-blue-600">
         MEMORIES
       </h3>
       <Slider {...settings}>
@@ -55,7 +55,7 @@ export default function Carousel({ slides }) {
         ))}
       </Slider>
       <div className="flex justify-center mt-10">
-        <Link href="/memories">
+        <Link href="/memories/#members">
           <Button>More Memos</Button>
         </Link>
       </div>

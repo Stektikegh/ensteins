@@ -87,7 +87,6 @@ function FloatingPaths({
 }
 
 export default function BackgroundPaths() {
-  useEffect(() => console.log("render"));
   return (
     <div
       className="

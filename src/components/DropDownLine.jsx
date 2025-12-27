@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import Button from "./Button";
+import Link from "next/link";
 
 export default function DropDownLine() {
   const faqs = [
@@ -29,57 +31,57 @@ export default function DropDownLine() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="w-full flex justify-center py-20 px-4">
-      <div className="w-[90%] max-w-5xl rounded-lg p-10 flex flex-col lg:flex-row gap-10 backdrop-blur-sm">
+    <section className="w-full flex flex-col justify-center items-center">
+      <div className="w-full flex justify-center items-center py-20 px-4">
+        <div className="w-[90%] max-w-5xl rounded-lg p-10 flex flex-col lg:flex-row gap-10 backdrop-blur-sm">
+          <div className="flex-1 text-white">
+            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight">
+              GET TO KNOW
+              <br />
+              <span className="text-blue-600">ENST</span>EINS
+            </h2>
+          </div>
 
-        <div className="flex-1 text-white">
-          <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-            GET TO KNOW
-            <br />
-            <span className="text-blue-400">ENST</span>EINS
-          </h2>
-
-          {/* <Button className="mt-8 px-6 py-2 rounded-full transition shadow-lg">
-            Learn More
-          </Button> */}
-        </div>
-
-        <div className="flex-1 flex flex-col gap-4">
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-blue-500/10 overflow-hidden bg-linear-to-br from-[#2c2c40] to-[#181824]"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full p-4 flex justify-between items-center cursor-pointer"
-              >
-                <span className="text-white/90 font-medium">
-                  {faq.question}
-                </span>
-                <FiChevronDown
-                  className={`text-blue-400 text-xl transition-transform ${
-                    openIndex === i ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
+          <div className="flex-1 flex flex-col gap-4">
+            {faqs.map((faq, i) => (
               <div
-                className={`
+                key={i}
+                className="rounded-xl border border-blue-500/10 overflow-hidden bg-linear-to-br from-[#2c2c40] to-[#181824]"
+              >
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="w-full p-4 flex justify-between items-center cursor-pointer"
+                >
+                  <span className="text-white/90 font-medium">
+                    {faq.question}
+                  </span>
+                  <FiChevronDown
+                    className={`text-blue-400 text-xl transition-transform ${
+                      openIndex === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <div
+                  className={`
                   transition-all duration-300 text-white/80 px-4 
                   ${
                     openIndex === i
-                      ? "max-h-40 py-2 opacity-100"
+                      ? "max-h-96 py-2 opacity-100"
                       : "max-h-0 py-0 opacity-0"
                   }
                 `}
-              >
-                {faq.answer}
+                >
+                  {faq.answer}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
+      <Link href="/contact-us" className="mb-12 z-50">
+        <Button>Ask us a question!</Button>
+      </Link>
     </section>
   );
 }

@@ -61,7 +61,7 @@ export default function MembersSectionGrid() {
   return (
     <section className="min-h-screen flex items-center justify-center sm:px-8 py-16 relative">
       <div className="w-full max-w-7xl relative z-10">
-        <h2 className="text-[60px] font-bold text-white text-center mb-16 leading-[100%] font-['Gudea']">
+        <h2 className="text-[60px] font-bold text-blue-600 text-center mb-16 leading-[100%] font-['Gudea']">
           Members
         </h2>
 

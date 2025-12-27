@@ -1,31 +1,33 @@
 import React from "react";
 import EventCard from "./EventCard";
+import Link from "next/link";
+import Button from "./Button";
 
 const EventsSection = () => {
   const events = [
     {
-      id: 1,
-      day: "04/11/2025",
-      time: "9:00",
-      title: "ENSTA RACE",
-      description: "May the Gloriest Empire Win the BAttle",
-      timeBoxColor: "#ECADE8B2",
-    },
-    {
       id: 2,
-      day: "18/02/2025",
+      day: "year 2026",
       time: "14:30",
       title: "InTech",
       description: "Learn new technologies and network with professionals",
-      timeBoxColor: "#ADC9ECB2",
+      timeBoxColor: "#4F8CFFB2",
     },
     {
       id: 3,
-      day: "28/11/2024",
+      day: "year 2026",
       time: "18:00",
       title: "WeeHack",
       description: "Problem, solution.. Something is being cooked!",
-      timeBoxColor: "#E5ECADB2",
+      timeBoxColor: "#4FE3B2B2",
+    },
+    {
+      id: 1,
+      day: "year 2026",
+      time: "9:00",
+      title: "ENSTA RACE",
+      description: "May the Gloriest Empire Win the BAttle",
+      timeBoxColor: "#FFD27DB2",
     },
   ];
 
@@ -39,8 +41,8 @@ const EventsSection = () => {
         {/* <span className="text-6xl md:text-3xl sm:text-2xl text-white font-bold">
           UPCOMING
         </span> */}
-        <span className="text-4xl sm:text-6xl text-[#0A93E2] font-bold ml-3">
-          EVENTS
+        <span className="text-4xl sm:text-6xl text-blue-600 font-bold ml-3">
+          UP COMMING EVENTS
         </span>
       </h1>
 
@@ -56,6 +58,9 @@ const EventsSection = () => {
           />
         ))}
       </div>
+      <Link href="memories/#events" className="z-10">
+        <Button>Previous Events</Button>
+      </Link>
     </div>
   );
 };
