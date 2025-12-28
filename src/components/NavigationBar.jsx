@@ -39,7 +39,7 @@ export default function NavigationBar() {
     <>
       <nav
         className={`
-          fixed top-0 left-0 h-20 w-full z-50
+          fixed top-0 left-0 h-20 w-full z-1000
           flex justify-between items-center
           py-5 px-6 md:px-10 text-white
           bg-linear-to-b from-white/5 via-black/10 to-white/5 backdrop-blur-md

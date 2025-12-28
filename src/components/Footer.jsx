@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#050322] text-white py-16 relative overflow-hidden">
 
-      <div className="absolute inset-0 opacity-20 blur-3xl bg-gradient-to-br from-blue-600/30 to-transparent"></div>
+      <div className="absolute inset-0 opacity-20 blur-3xl bg-linear-to-br from-blue-600/30 to-transparent"></div>
 
       <div className="relative flex flex-col items-center z-10">
 
