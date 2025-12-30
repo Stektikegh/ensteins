@@ -10,16 +10,14 @@ const DepartmentCard = ({
   mission,
   description,
   mainActivities = [],
-  technologies = [],
   goodFitIf = [],
   levelExpectation,
   isReversed = false,
 }) => {
   return (
     <section
-      className={`relative w-full max-w-[1000px] rounded-2xl p-6 sm:p-10 flex flex-col ${
-        isReversed ? "sm:flex-row-reverse" : "sm:flex-row"
-      } gap-8 items-start bg-linear-to-b from-white/5 via-black/10 to-white/5 border border-white/20 backdrop-blur-md mx-auto transition-all`}
+      className={`relative w-full max-w-[1000px] rounded-2xl p-6 sm:p-10 flex flex-col ${isReversed ? "sm:flex-row-reverse" : "sm:flex-row"
+        } gap-8 items-start bg-linear-to-b from-white/5 via-black/10 to-white/5 border border-white/20 backdrop-blur-md mx-auto transition-all`}
       aria-labelledby={`dept-${shortName ?? name}`}
     >
       <div
@@ -76,24 +74,6 @@ const DepartmentCard = ({
                 <li key={i}>{item}</li>
               ))}
             </ul>
-          )}
-        </div>
-
-        <div>
-          <h3 className="text-white font-semibold mb-2">Technologies</h3>
-          {technologies.length === 0 ? (
-            <p className="text-white/60 text-sm">No tech listed.</p>
-          ) : (
-            <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 text-xs rounded-full bg-white/8 text-white/90 border border-white/5"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
           )}
         </div>
 

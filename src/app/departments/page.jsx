@@ -12,34 +12,25 @@ const departments = [
     mission:
       "Design, build, and maintain the club’s technical ecosystem, including websites, applications, and AI-powered tools.",
     description:
-      "The IT department is the technical backbone of the club. Members work on real-world projects such as web platforms, 3D Modeling, automation tools, and AI integrations. The department encourages collaboration, and continuous learning.",
+      "The IT department is the technical backbone of the club. Members work on projects such as web platforms, 3D Modeling, automation tools, and AI integrations. The department encourages collaboration, and continuous learning.",
     mainActivities: [
-      "Web development (Frontend & Backend)",
-      "Mobile app development",
       "Graphic design, with all its fields",
+      "Video Editing",
+      "Web development",
+      "Mobile app development",
       "UI/UX design",
       "AI tools & automation",
       "Internal technical tooling",
-      "Code reviews & technical workshops",
-    ],
-    technologies: [
-      "JavaScript / TypeScript",
-      "React / Next.js",
-      "Node.js",
-      "Adobe Apps",
-      "Figma",
-      "Canva",
-      "Python",
-      "AI APIs",
+      "Technical workshops",
     ],
     goodFitIf: [
       "You enjoy solving logical and technical problems",
       "You are curious about how software systems work",
-      "You like learning by building real projects",
-      "You can stay focused for long sessions",
+      "You like learning by building projects",
+      "You have patience"
     ],
     levelExpectation:
-      "Beginner-friendly, but requires strong motivation and willingness to learn.",
+      "Beginner, Intermidiate or even Advanced in some field in IT, there is a place here for everyone",
   },
 
   {
