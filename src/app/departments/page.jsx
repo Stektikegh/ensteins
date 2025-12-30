@@ -46,7 +46,7 @@ const departments = [
     name: "FLER Department",
     shortName: "FLER",
     logo: "/fler.jpg",
-    leaderName: "Yousra",
+    leaderName: "MAKHTOUR Yousra",
     leaderRole: "FLER Department Leader",
     leaderPhoto: "fler-leader.jpg",
     mission:
@@ -74,7 +74,7 @@ const departments = [
     name: "Human Resources Department",
     shortName: "HR",
     logo: "/hr.jpg",
-    leaderName: "Wiam",
+    leaderName: "Wiam LAKEHAL",
     leaderRole: "HR Department Leader",
     leaderPhoto: "/hr-leader.jpg",
     mission: "Build a strong, motivated, and collaborative club community.",

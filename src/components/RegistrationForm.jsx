@@ -14,6 +14,8 @@ export default function RegistrationForm() {
 
   const specs = [
     { value: "MI ( cp)", label: "MI (cp)" },
+    { value: "SS", label: "SS (system security" },
+    { value: "AI", label: "AI (Atrtificial Intelligence)" },
     { value: "ST (cp)", label: "ST (cp)" },
     { value: "STR", label: "STR" },
     { value: "SE", label: "SE" },
@@ -28,6 +30,12 @@ export default function RegistrationForm() {
     { value: "WATER TREATMENT", label: "WATER TREATMENT" },
     { value: "ELECTRICAL TRACTION", label: "ELECTRICAL TRACTION" },
   ];
+  const departments = [
+    { value: "IT", label: "IT Department" },
+    { value: "FLER", label: "FLER Department" },
+    { value: "HR", label: "Human Resources" },
+    { value: "COMM", label: "Communication Department" },
+  ];
 
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
@@ -38,9 +46,16 @@ export default function RegistrationForm() {
   const [selectedSpec, setSelectedSpec] = useState(null);
   const listRefSpec = useRef(null);
   const buttonRefSpec = useRef(null);
+
+  const [openDept, setOpenDept] = useState(false);
+  const [selectedDept, setSelectedDept] = useState(null);
+  const listRefDept = useRef(null);
+  const buttonRefDept = useRef(null);
+
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
   const successTimerRef = useRef(null);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -69,6 +84,15 @@ export default function RegistrationForm() {
         !buttonRefSpec.current.contains(e.target)
       ) {
         setOpenSpec(false);
+      }
+
+      if (
+        listRefDept.current &&
+        !listRefDept.current.contains(e.target) &&
+        buttonRefDept.current &&
+        !buttonRefDept.current.contains(e.target)
+      ) {
+        setOpenDept(false);
       }
     }
     document.addEventListener("mousedown", onClickOutside);
@@ -135,6 +159,36 @@ export default function RegistrationForm() {
     }
   }
 
+  function onKeyDownDept(e) {
+    if (
+      !openDept &&
+      (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ")
+    ) {
+      e.preventDefault();
+      setOpenDept(true);
+      return;
+    }
+    if (openDept) {
+      const idx = selectedDept
+        ? departments.findIndex((d) => d.value === selectedDept.value)
+        : -1;
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const next = departments[Math.min(idx + 1, departments.length - 1)];
+        setSelectedDept(next);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const prev = departments[Math.max(idx - 1, 0)];
+        setSelectedDept(prev);
+      } else if (e.key === "Escape") {
+        setOpenDept(false);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        setOpenDept(false);
+      }
+    }
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     setSending(true);
@@ -145,6 +199,7 @@ export default function RegistrationForm() {
     if (!selected) newErrors.year = "Please select your year of study";
     if (!selectedSpec)
       newErrors.specialization = "Please select your specialization";
+    if (!selectedDept) newErrors.department = "Please select a department";
     if (!form.facebook.trim())
       newErrors.facebook = "Facebook account is required";
     if (!form.skills.trim()) newErrors.skills = "Please describe your skills";
@@ -163,6 +218,7 @@ export default function RegistrationForm() {
       facebook: form.facebook.trim(),
       year: selected.value,
       specialization: selectedSpec.value,
+      department: selectedDept.value,
       skills: form.skills.trim(),
       contribution: form.contribution.trim(),
     };
@@ -470,6 +526,105 @@ export default function RegistrationForm() {
             </div>
 
             <div className="space-y-2">
+              <label className="block text-sm font-bold text-white/80">
+                Which department do you wish to join?
+              </label>
+
+              <div className="relative">
+                <input
+                  type="hidden"
+                  name="department"
+                  value={selectedDept ? selectedDept.value : ""}
+                  required
+                />
+
+                <button
+                  type="button"
+                  ref={buttonRefDept}
+                  aria-haspopup="listbox"
+                  aria-expanded={openDept}
+                  onClick={() => setOpenDept((s) => !s)}
+                  onKeyDown={onKeyDownDept}
+                  className="w-full text-left px-5 py-3 bg-white/6 border border-white/12 rounded-2xl text-white text-sm flex items-center justify-between"
+                >
+                  <span
+                    className={selectedDept ? "text-white" : "text-white/50"}
+                  >
+                    {selectedDept ? selectedDept.label : "Select a department"}
+                  </span>
+                  <svg
+                    className={`w-5 h-5 text-white/60 transition-transform ${
+                      openDept ? "rotate-180" : ""
+                    }`}
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 12a.75.75 0 01-.53-.22l-3-3a.75.75 0 111.06-1.06L10 10.19l2.47-2.47a.75.75 0 111.06 1.06l-3 3A.75.75 0 0110 12z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                {openDept && (
+                  <div className="absolute mt-2 w-full z-50">
+                    <ul
+                      ref={listRefDept}
+                      role="listbox"
+                      className="max-h-52 overflow-auto border border-white/12 rounded-2xl bg-linear-to-b from-blue-950/85 via-blue-950/50 to-blue-950/20 backdrop-blur-xl"
+                    >
+                      {departments.map((d) => {
+                        const isSelected =
+                          selectedDept && selectedDept.value === d.value;
+
+                        return (
+                          <li
+                            key={d.value}
+                            role="option"
+                            aria-selected={isSelected}
+                            onClick={() => {
+                              setSelectedDept(d);
+                              setOpenDept(false);
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter") {
+                                setSelectedDept(d);
+                                setOpenDept(false);
+                              }
+                            }}
+                            className={`px-5 py-3 cursor-pointer text-sm text-white ${
+                              isSelected
+                                ? "bg-[#5c92ff]/60 rounded-xl"
+                                : "hover:bg-white/10"
+                            }`}
+                          >
+                            {d.label}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              <div className="text-right">
+                <a
+                  href="/departments"
+                  className="text-xs text-blue-400 hover:underline"
+                >
+                  Not sure? View departments →
+                </a>
+              </div>
+
+              {errors.department && (
+                <p className="text-red-500 text-xs italic">
+                  {errors.department}
+                </p>
+              )}
+            </div>
+
+            <div className="space-y-2">
               <label
                 htmlFor="facebook"
                 className="block text-sm font-medium text-white/80"
@@ -544,13 +699,14 @@ export default function RegistrationForm() {
             <div className="flex justify-center pt-2">
               <button
                 type="submit"
-                className="w-full lg:w-1/2 bg-blue-600 hover:to-[#2f59ff] font-semibold py-3 rounded-2xl transition-all transform hover:-translate-y-0.5 shadow-md disabled:opacity-60"
+                className="w-full text-white lg:w-1/2 bg-blue-600 hover:to-[#2f59ff] font-semibold py-3 rounded-2xl transition-all cursor-pointer transform hover:-translate-y-0.5 shadow-md disabled:opacity-60"
                 aria-live="polite"
                 disabled={sending}
               >
                 {sending ? "Submitting..." : "SUBMIT"}
               </button>
             </div>
+
             {success && (
               <p className="text-green-400 text-center mt-4">
                 Registration successful! Thank you for joining us.

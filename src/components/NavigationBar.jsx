@@ -17,6 +17,8 @@ export default function NavigationBar() {
     { name: "EVENTS", path: "/#events" },
     { name: "MEMORIES", path: "/#memos" },
     { name: "ABOUT US", path: "/#about" },
+    { name: "DEPARTEMENTS", path: "/departments" },
+    // { name: "REGISTRATIONS", path: "/registration" },
   ];
 
   useEffect(() => {

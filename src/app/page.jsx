@@ -5,9 +5,10 @@ import EventsSection from "@/src/components/EventsSection";
 import DropDownLine from "@/src/components/DropDownLine";
 import Stats from "@/src/components/Stats";
 import ReachUs from "../components/ReachUs";
+// import Link from "next/link";
+// import Button from "../components/Button";
 
 export default function Home() {
-
   return (
     <main className="w-screen z-0">
       <BackgroundPaths />
@@ -34,6 +35,13 @@ export default function Home() {
       </div>
 
       <ReachUs />
+      {/* <Link
+        href="/registration"
+      >
+        <Button className="fixed bottom-8 right-8">
+          Register Now
+        </Button>
+      </Link> */}
     </main>
   );
 }
