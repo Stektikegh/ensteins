@@ -24,8 +24,8 @@ const departments = [
       "Technical workshops",
     ],
     goodFitIf: [
-      "You enjoy solving logical and technical problems",
-      "You are curious about how software systems work",
+      "You enjoy solving problems",
+      "You are curious about computers",
       "You like learning by building projects",
       "You have patience"
     ],
@@ -36,7 +36,7 @@ const departments = [
   {
     name: "FLER Department",
     shortName: "FLER",
-    logo: "/fler.jpg",
+    logo: "/fler.png",
     leaderName: "MAKHTOUR Yousra",
     leaderRole: "FLER Department Leader",
     leaderPhoto: "fler-leader.jpg",
@@ -64,7 +64,7 @@ const departments = [
   {
     name: "Human Resources Department",
     shortName: "HR",
-    logo: "/hr.jpg",
+    logo: "/hr.png",
     leaderName: "Wiam LAKEHAL",
     leaderRole: "HR Department Leader",
     leaderPhoto: "/hr-leader.jpg",
@@ -91,7 +91,7 @@ const departments = [
   {
     name: "Communication Department",
     shortName: "COMM",
-    logo: "/comm.jpg",
+    logo: "/comm.png",
     leaderName: "Celine AIT BELKACEM",
     leaderRole: "Communication Department Leader",
     leaderPhoto: "/comm-leader.jpg",

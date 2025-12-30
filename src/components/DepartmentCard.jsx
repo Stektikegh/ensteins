@@ -77,6 +77,7 @@ const DepartmentCard = ({
           )}
         </div>
 
+
         {levelExpectation && (
           <p className="mt-2 text-white/70 text-sm">
             <span className="font-semibold text-white">Level: </span>
